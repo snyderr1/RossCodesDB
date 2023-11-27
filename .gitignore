@@ -1,0 +1,12 @@
+.vs/
+.vs/*
+.vscode/
+.vscode/*
+BackEndProject.esproj
+BackEndProject.esproj.user
+BackEndProject.sln
+external/secret.ts
+node_modules/
+node_modules/*
+obj/
+obj/*
