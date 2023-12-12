@@ -7,7 +7,7 @@ import mountRoutes from './routes';
 const app: Application = express();
 app.use(cors());
 app.use(bodyParser.json());
-const port = process.env.PORT ?? 3001;
+//const port = process.env.PORT ?? 3001;
 
 app.use(
 	bodyParser.urlencoded({
@@ -17,6 +17,10 @@ app.use(
 
 mountRoutes(app);
 
-app.listen(port, () => {
-	console.log(`Server is listening on http://localhost:${port}`);
+app.listen(3001, '0.0.0.0', () => {
+	console.log(`Server is listening on http://143.198.66.254:3001`);
+});
+
+app.get('/test', (req, res) => {
+	res.send({express: "Test succeeded"});
 });

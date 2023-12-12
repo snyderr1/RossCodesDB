@@ -12,7 +12,7 @@ export default router;
 router.get('/db', async (req, res) => {
 	//
 	//res.send('{"text": "This is the home Router"}').status(200);
-	const dat = await query_db("select * from projects")
+	const dat = await query_db("select * from project_list")
 	console.log(dat.rows[0])
 	res.send(dat).status(200);
 });
