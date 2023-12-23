@@ -15,7 +15,12 @@ const pool_secret = new Pool({
 async function query_db(text: string) {
 	
 	const ret = await pool_secret.connect()
-	const data = await pool_secret.query(text);
+	let data;
+	try {
+		data = await pool_secret.query(text);
+	} finally {
+		ret.release();
+	}
 	return data;
 }
 
